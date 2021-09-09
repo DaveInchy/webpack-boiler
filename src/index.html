@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+
+        <!-- include webpack polyfill for compatability with older browsers that dont support web components -->
+        <script src="webcomponents/webcomponents-loader.js"></script>
+        <script>
+            if (!window.customElements) { document.write('<!--'); }
+        </script>
+        <script src="webcomponents/custom-elements-es5-adapter.js"></script>
+        <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+
+        <title>Webpack & Web Components</title>
+    </head>
+
+    <body>
+        <h1>Webpack & Web Components</h1>
+        <small>W/ Vanilla Javascript</small>
+
+        <div class="form">
+            <vaadin-text-field label="First Name" id="firstName"></vaadin-text-field>
+            <vaadin-text-field label="Last Name" id="lastName"></vaadin-text-field>
+            <vaadin-button id="addButton">Add</vaadin-button>
+        </div>
+
+        <vaadin-grid id="grid">
+            <vaadin-grid-column path="firstName" header="First Name">
+            </vaadin-grid-column>
+            <vaadin-grid-column path="lastName" header="Last Name">
+            </vaadin-grid-column>
+        </vaadin-grid>
+    </body>
+
+</html>
